@@ -28,12 +28,6 @@ runs:
     - uses: actions/setup-python@v2
       with:
         python-version: ${{ inputs.python-version }}
-    - name: Load cached Poetry installation
-      uses: actions/cache@v2
-      with:
-        # This path assumes the workflow is run on an ubuntu runner
-        path: ~/.local
-        key: key-${{ inputs.poetry-cache-key }}
     - uses: snok/install-poetry@v1
     - name: Publish package
       shell: bash
